@@ -16,12 +16,9 @@
 			<input type="number" id="numero" name="numero" required>
 
 			<div class="botoes">
-				<button type="submit">Verificar</button>
-				<input type="reset" value="Limpar" class="botao" />
+			<input class="botao" type="submit" value="Verificar" class="botao" />
+				<input type="reset" value="Limpar" class="botao"/>
 			</div>
-		</form>
-
-
 		</form>
 	</div>
 </body>

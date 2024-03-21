@@ -1,84 +1,87 @@
-﻿body {
-    background-color: #E1EAF2;
-    margin: 0;
-	padding: 0;
-	font-family: Tahoma, Verdana, Arial, Sans-Serif, Times New Roman;
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-.image {
-	width: 200px;
+:root {
+  --green: #3b7b1b;
+  --dark-green: #265210;
+  --grey: #808080;
+  --grey-light: #c4c4c4;
+  --background: #ceddec;
 }
 
-.content {
-	padding: 10px;
+body {
+  background-color: var(--background);
 }
 
-#tformulario{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    background-color: rgba(255,255,255,255);
-    margin: 100px auto 100px auto;
-	padding: 10px;
-    width: 550px;
-    min-height:180px;
-	box-shadow:0px 2px 6px 4px grey;
-	-webkit-box-shadow: 0px 2px 6px 4px grey;
-	-moz-box-shadow: 0px 2px 6px 4px grey;
+#tformulario {
+  background-color: rgba(255, 255, 255, 255);
+  margin: 50px auto;
+  padding: 30px;
+  width: 350px;
+  border-radius: 10px;
+  min-height: 180px;
+  text-align: center;
 }
 
-#tformulario h1{
-	color:#326C99;
-	font-weight: bold;
+#tformulario h1 {
+  color: var(--green);
+  font-weight: bold;
+  
 }
 
-#tformulario label
-{
-    display: block;
-    padding: 10px 0 0 0;
-	font-size: 20px;
-	font-weight: bold;
-	color:#326C99;
+#tformulario label {
+  display: block;
+  padding: 5px;
+  font-size: 20px;
+  padding-bottom: 15px;
 }
 
-#tformulario input[type=text],input[type=number]
-{
-	margin-left:0px;
-	padding: 8px;
+
+#tformulario input[type=text],
+input[type=number], input[type=password] {
+  padding: 8px;
+  border: 2px solid var(--grey-light);
+  border-radius: 5px;
 }
 
 .botao {
-	background-color: #273747;
-	color: white;
-	padding: 8px;
-	box-shadow: 2px 2px 1px #aaaaaa;
-	clear: both;
-	margin-top: 10px;
-	margin-left:0px;
-	-msie-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    font-weight: bold;
-	outline:none;
+  background-color: var(--green);
+  margin: 10px 0;
+  color: white;
+  padding: 7px;
+  box-shadow: 2px 2px 1px var(--grey-light);
+  clear: both;
+  -msie-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  font-weight: bold;
+  outline: none;
+  text-transform: uppercase;
 }
 
 .botao:hover {
-  background: #326C99;
+  background: var(--dark-green);
 }
 
-/* #geral{
-    background-color: rgba(255,255,255,255);
-    margin: 100px auto;
-	margin-top:20px;
-    width: 996px;
-	box-shadow:0px 2px 6px 4px grey;
-	-webkit-box-shadow: 0px 2px 6px 4px grey;
-	-moz-box-shadow: 0px 2px 6px 4px grey;
+#geral {
+  background-color: rgba(255, 255, 255, 255);
+  margin: 50px auto;
+  padding: 30px;
+  width: 350px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-#conteudo h4{
-	margin: 10px;
-	padding: 0px;
-	color:#326C99;
-	text-decoration: none
-} */
+#conteudo {
+  text-align: end;
+  font-size: 20px;
+  color: var(--green);
+  font-weight: 600;
+}

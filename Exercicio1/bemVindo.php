@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head> 
+
+<head>
   <meta charset="UTF-8">
-  <link href="css/login.css" rel="stylesheet" type="text/css" /> 
+  <link href="css/login.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-<div id="geral">
-  <section id="conteudo">
-    <table>
-      <tr>
-        <td>
-          <?php
+  <div id="geral">
+    <section id="conteudo">
+      <table>
+        <tr>
+          <td>
+            <?php
             // Inicializa a variável $username
             $username = '';
 
@@ -30,20 +32,21 @@
               // Verifica se o usuário e a senha correspondem aos cadastrados
               if (array_key_exists($username, $usuarios_cadastrados) && $usuarios_cadastrados[$username] == $password) {
                 // Usuário autenticado com sucesso
-                echo "<p>Bem-vindo ao sistema</p>";
+                echo "<p>Bem-vinda ao sistema :)</p>";
               } else {
                 // Usuário não autenticado
-                echo "<p>Você não tem acesso ao sistema</p>";
+                echo "<p>Você não tem acesso ao sistema :(</p>";
               }
             } else {
               // Caso o formulário não tenha sido enviado
-              echo "<p>Por favor, preencha o formulário</p>";
+              echo "<p>Por favor, preencha o formulário!</p>";
             }
-          ?>
-        </td>
-      </tr>
-    </table>   
-  </section>
-</div>
+            ?>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
 </body>
+
 </html>

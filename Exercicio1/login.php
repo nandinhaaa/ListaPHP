@@ -1,38 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-<head> 
+
+<head>
   <meta charset="UTF-8">
   <title>Sistema de Controle de Finanças</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <link href="css/login.css" rel="stylesheet" type="text/css" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/login.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-
-	<!-- <form action="bemVindo.php" method="post">
-	<img id="imagem" src="login.jpg">
-		<label>Nome do usuário:</label>
-		<input type="string" required="required" name="name" size="30" >
-   	    <label>Senha:</label>
-		<input type="password" required="required" name="senha" maxlength="8" size="30">
-		<br>
-		
-	 <input class="botao" class="botton" type="submit" value="Acessar" class="botao"/>
-   	 <input class="botao" class="botton" type="reset" value="Limpar" class="botao"/>
-	</form> -->
-
-<div id="tformulario">
-	<h1>Logar no Sistema</h1>
-<form action="bemVindo.php" method="post">
-<img id="imagem" src="login.jpg">
-    <label>Nome do usuário:</label>
-    <input type="text" required="required" name="username" size="30">
-    <label>Senha:</label>
-    <input type="password" required="required" name="password" maxlength="8" size="30">
-    <br>
-    <input class="botao" type="submit" value="Acessar" class="botao"/>
-    <input class="botao" type="reset" value="Limpar" class="botao"/>
-</form>
-</div> 
+  <div id="tformulario">
+    <h1>Logar no Sistema</h1>
+    <form action="bemVindo.php" method="post">
+      <img id="imagem" src="login.jpg">
+      <label>Nome do usuário:</label>
+      <input type="text" required="required" name="username" size="30">
+      <label>Senha:</label>
+      <input type="password" required="required" name="password" maxlength="8" size="30">
+      <br>
+      <input class="botao" type="submit" value="Acessar" class="botao" />
+      <input class="botao" type="reset" value="Limpar" class="botao" />
+    </form>
+  </div>
 </body>
+
 </html>
