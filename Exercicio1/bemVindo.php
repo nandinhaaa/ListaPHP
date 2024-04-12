@@ -2,51 +2,62 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <div id="geral">
-    <section id="conteudo">
-      <table>
-        <tr>
-          <td>
+    <div id="geral">
+        <section id="conteudo">
             <?php
-            // Inicializa a variável $username
+            // Inicializa variáveis
             $username = '';
+            $dataDeAtivacao = '';
 
             // Verifica se os dados do formulário foram enviados
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              // Obtém o nome de usuário enviado pelo formulário
-              $username = isset($_POST['username']) ? $_POST['username'] : '';
+                // Obtém dados do formulário
+                $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+                $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-              // Simula uma lista de usuários cadastrados no sistema
-              $usuarios_cadastrados = array(
-                "Nanda" => "123",
-                "Amanda" => "123"
-              );
+                // Validação básica de dados (opcional)
+                if (empty($username) || empty($password)) {
+                    echo "<p>Preencha todos os campos!</p>";
+                    exit;
+                }
 
-              $password = isset($_POST['password']) ? $_POST['password'] : '';
+                // Simula consulta em banco de dados (substitua por sua consulta real)
+                $consultaUsuario = array(
+                    "Nanda" => password_hash("123", PASSWORD_DEFAULT), // Senha criptografada
+                    "Amanda" => password_hash("123", PASSWORD_DEFAULT) // Senha criptografada
+                );
 
-              // Verifica se o usuário e a senha correspondem aos cadastrados
-              if (array_key_exists($username, $usuarios_cadastrados) && $usuarios_cadastrados[$username] == $password) {
-                // Usuário autenticado com sucesso
-                echo "<p>Bem-vinda ao sistema :)</p>";
-              } else {
-                // Usuário não autenticado
-                echo "<p>Você não tem acesso ao sistema :(</p>";
-              }
-            } else {
-              // Caso o formulário não tenha sido enviado
-              echo "<p>Por favor, preencha o formulário!</p>";
+                // Verifica se usuário e senha existem e correspondem
+                if (array_key_exists($username, $consultaUsuario) && password_verify($password, $consultaUsuario[$username])) {
+                    // Usuário autenticado
+                    $dataDeAtivacao = date("d/m/Y", strtotime("+1 week")); // Data de ativação em uma semana
+
+                    // Exibe mensagem de boas-vindas personalizada
+                    echo "<p>Bem-vinda(o), $username! :) <br> </p>";
+                    echo "<p>Sua conta será ativada em: $dataDeAtivacao <br></p>";
+                    echo "<p>Senha criptografada: " . $consultaUsuario[$username] . "</p>"; // Exibe a senha criptografada
+
+                 
+                } else {
+                    // Erro de autenticação
+                    echo "<p>Usuário ou senha inválidos!</p>";
+                }
+            } else { 
+                // Formulário não enviado
+                echo "<p>Por favor, preencha o formulário!</p>";
             }
+
+
             ?>
-          </td>
-        </tr>
-      </table>
-    </section>
-  </div>
+            
+        </section>
+   
+    </div>
 </body>
 
 </html>
